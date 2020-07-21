@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="@ViewBag.Description" />
+    <title>@ViewBag.Title</title>
+
+    <META NAME="keywords" CONTENT="Norfolk Breaks, Holiday Lettings, Brundall, Norfolk, Evening Glory, Brundall, fishing, fishing holiday, Brundall fishing, Norfolk Fishing, Summer Holiday, Norfolk Breaks">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <meta name="google-site-verification" content="44Sy8SDGuA2yKIV2U4SN2W-rp1TljMPoY7Sh79pXYw8" />
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link href="https://fonts.googleapis.com/css?family=Martel|Source+Sans+Pro" async rel="stylesheet"> 
+    @Styles.Render("~/bundles/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="@Url.Action("Index","Home")"><i class="fa fa-home  " aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="@Url.Action("Evening_Glory","Home")">Evening Glory</a></li>
+                <!-- <li><a href="@Url.Action("The_Moorings","Home")">The Moorings</a></li> -->
+
+                @* <li><a href="@Url.Action("Pricing","Home")">Pricing</a></li> *@
+                <li><a href="@Url.Action("ContactUs","Home")">Contact Us</a></li>
+
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+    <div class="MainImage">
+        <div class="MainImageshuttle"></div>
+    </div>
+        <div class="container">
+            <div class="LabelMotoText">
+
+
+                <b class="Title"> WELCOME TO NORFOLK BREAKS </b><br />
+                View our great range of personally inspected self catering cottages
+            </div><div class="LabelMoto hidden-xs"> </div>
+
+        </div>
+        <div class="container body-content">
+            @RenderBody()
+        </div>
+
+
+        <footer class="container ">
+            <p><i class="fa fa-copyright" aria-hidden="true"></i> @DateTime.Now.Year
+            
+  
+
+                <a class="hidden-xs" href="mailto:contact@lucydent.co.uk"> <i class="fa fa-envelope fbclor" aria-hidden="true"></i></a>
+
+
+
+            </p>
+        </footer>
+
+    <div id="Contactform" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Get in Touch</h4>
+                </div>
+                @using (Html.BeginForm("Emailform", "home", FormMethod.Post))
+                {
+
+                    <div style="padding:15px">
+
+                        <div class="row ">
+                            <div class="col-sm-6 center-block">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    @Html.TextBox("email", "", new { id = "Email", @class = "form-control", placeholder = "Email", type = "email"})
+
+
+
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Name</label>
+                                    @Html.TextBox("name", "", new { id = "name", @class = "form-control", placeholder = "Name", type = "text" })
+
+
+
+                                </div>
+                            </div>
+                            <div class="col-sm-6 center-block">
+                                <div class="form-group">
+                                    <label for="exampleInputName2">Message</label>
+                                   
+                                    @Html.TextArea("body", "", new { id = "body", @class = "form-control textboxbigger", placeholder = "For more information or booking details get in touch", type = "text" })
+
+
+
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                </div>
+
+
+
+
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-success"><i class="fa fa-paper-plane" aria-hidden="true"></i>&nbsp;&nbsp; Send</button>
+                        </div>
+                        }
+
+                    </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+
+
+</body>
+</html>

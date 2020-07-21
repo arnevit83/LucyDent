@@ -1,0 +1,165 @@
+﻿@model ImageGalleryInMvc5.Models.ImageGallery
+@{  
+
+    ViewBag.Title = "The Mooring - Norfolk Breaks";
+
+    ViewBag.Description = "Norfolk Breaks - Holiday Lettings, Evening Glory, Brundall";
+}
+<div class="HomeContainer">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="page-header">
+                <h1>
+                    The Mooring<br class="hidden-sm hidden-md hidden-lg" /><small>
+    &nbsp;&nbsp;
+    ACCOMODATION DETAILS
+    <a style="display:none" class="imageGallery hidden btn btn-success pull-right hidden-xs" data-fancybox-type="iframe"
+       href="@Url.Action("UploadImage", "Home")"><i class="fa fa-upload" aria-hidden="true"></i>&nbsp;&nbsp;Upload New Image</a>
+</small>
+                </h1>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <p>
+                        <br />
+                        The Mooring is a self catering holiday studio chalet situated in Thorpe Saint Andrews, in the heart of the broads just
+                        South East of Norwich city centre and overlooks wonderful views of the River Yare from the large decking area.<br /><br />
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-sm-6 col-xs-12">
+                    <p>
+
+                        <ul>
+                            <li>  There is road side parking nearby. </li>
+                            <li> The train station is a 15 minute walk and Great Yarmouth can be reached in less than ten minutes.</li>
+                            <li>There is a bus stop right outside taking you straight to the city center.</li>
+                            <li>You can walk to the center of Norwich City in 40 minutes.</li>
+                            <li> The local pub &quot;The Buck Inn&quot; is a a minute walk away and serves food 7 days a week and there are numerous other restaurants near by and a cafe servings tea's, coffee's and snacks.</li>
+                           
+                            <li>
+                                Sainburys supermarket is 10 minutes walk along the river.
+                            </li>
+                    
+                            <li>
+                                It is surrounded by good walks and cycle routes and Whitlingham Park is nearby. Other places to visit include the
+                                history city of Norwich with its Cathedrals, Castle, galleries, museums, shopping and great places to eat.
+                            </li>
+                            <li>
+                                Great Yarmouth is fantastic for families with amusements, the Pleasure Beach theme park and sandy beaches.
+                            </li>
+                        </ul>
+
+
+
+
+
+                    </p>
+                </div>
+                <div class="col-sm-6 hidden-xs">
+                    <iframe src="https://calendar.google.com/calendar/b/2/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=biuhnu4p38pkcnn4umvtq1nkmc%40group.calendar.google.com&amp;color=%232952A3&amp;ctz=Europe%2FLondon" style="border-width:0" width="100%" height="400" frameborder="0" scrolling="no"></iframe>
+                </div>
+
+
+
+
+            </div>
+            <br /><br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <a class="btn btn-primary btn-lg" href="~/Upload_Files/3_Moring/Pricing/The Morning.csv">Download the Price Guide&nbsp;&nbsp;<i class="fa fa-download" aria-hidden="true"></i></a>
+
+                    <br class=" hidden-md hidden-lg " /><br class=" hidden-md hidden-lg " />
+                    <button type="button" style="float:right;" class="btn btn-success btn-lg btn-left-mobile " data-toggle="modal" data-target="#Contactform">
+                        Get in Touch&nbsp;&nbsp;<i class="fa fa-heart" aria-hidden="true"></i>
+                    </button>
+                </div>
+
+            </div>
+            <br /><hr />
+            <div class="row">
+                <div class="col-sm-12 ">
+
+
+
+                    @if (Model.ImageList.Count > 0)
+            {
+                <div class="row-fluid">
+                    <div class="span2" style="margin: 0 auto;">
+                        <div class="item">
+                            @foreach (var image in Model.ImageList)
+                    {
+                        <div class="imgref">
+                            <a rel="group" class="fancybox-button" data-rel="fancybox-button"
+                               href="@Url.Content("~/Upload_Files/3_Moring/"+ image)">
+                                <div class="zoom">
+                                    <img src="@Url.Content("~/Upload_Files/3_Moring/" + image)" class="imgBox  thumbnail" />
+
+                                </div>
+                            </a>
+                        </div>
+            }
+                        </div>
+                    </div>
+                </div>
+    }
+
+
+
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+        </div>
+
+
+
+
+                
+            </div>
+
+        </div>
+@section Scripts {
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".fancybox-button").fancybox({
+                fitToView: true,
+                closeClick: false,
+                autoSize: false,
+                openEffect: 'elastic',
+                closeEffect: 'elastic',
+               
+            });
+        });
+
+        $(document).ready(function () {
+            $('.imageGallery').fancybox({
+                fitToView: true,
+                width: '600px',
+                height: '400px',
+                autoSize: false,
+                closeClick: true,
+                openEffect: 'elastic',
+                closeEffect: 'elastic',
+                padding: 0,
+                closeBtn: false,
+                'afterClose': function () {
+                    window.location.reload();
+                },
+            });
+        });
+    </script>
+}

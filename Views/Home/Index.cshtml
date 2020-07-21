@@ -1,0 +1,64 @@
+﻿@{  
+    ViewBag.Title = "Home - Norfolk Breaks";
+
+    ViewBag.Description = "Norfolk Breaks - Holiday Lettings, Evening Glory, Brundall";
+}
+<div class="HomeContainer">
+
+    <div class="row">
+
+        <div class="col-sm-9 col-xs-12">
+            <p>
+                <br />
+                <b>Thanks for visiting us.</b><br /><br />
+                Our properties are stuated in the Norfolk Broads in and around Norwich City.<br /><br />
+
+                Norfolk is possibly most famous for the man-made Broads, a National Park with over 125 miles of navigable lock-free waterways set in beautiful countryside and studded with charming and picturesque towns and villages.
+                
+                We provide self catering facilities on short and long term rents.
+            </p>  
+        </div>
+        <div class="col-sm-3">
+            <img class="img-responsive" style="width:200px; margin:auto" src="~/Images/logo.png" />
+        </div>
+    </div>
+
+    <hr />
+    Have a look at some of our great range of personally inspected self catering cottages<br />
+    <br />
+    <div class="row">
+
+        <div class="col-sm-12 center-block">
+
+            <div class="thumbnail">
+                <a href='@Url.Action("Evening_Glory", "Home")'>
+                    <div class="caption">
+                        <p>Evening Glory</p>
+
+                    </div>
+                    <img class="img-responsive" src='@Url.Content("~/Upload_Files/Evening_Glory/eveningglory-decking900.jpg")' />
+                </a>
+
+            </div>
+
+            
+            </div>
+        @* <div class="col-sm-6">
+
+            <div class="thumbnail">
+                <a href='@Url.Action("The_Moorings", "Home")'>
+                    <div class="caption">
+                        <p>The Mooring</p>
+
+                    </div>
+                    <img class="img-responsive" src='@Url.Content("~/Upload_Files/3_Moring/P1030664.jpg")' />
+                </a>
+             
+            </div>
+       
+        </div> *@
+    </div>
+
+</div>
+
+

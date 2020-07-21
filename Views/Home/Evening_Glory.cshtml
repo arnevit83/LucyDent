@@ -1,0 +1,198 @@
+﻿@model ImageGalleryInMvc5.Models.ImageGallery
+@{
+    ViewBag.Title = "Evening Glory - Norfolk Breaks";
+
+    ViewBag.Description = "Norfolk Breaks - Holiday Lettings, Evening Glory, Brundall";
+}
+<div class="HomeContainer">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="page-header">
+                <h1>
+                    EVENING GLORY<br class="hidden-sm hidden-md hidden-lg" /><small>
+    &nbsp;&nbsp;
+    ACCOMODATION DETAILS
+    <a style="display:none" class="imageGallery hidden btn btn-success pull-right hidden-xs" data-fancybox-type="iframe"
+       href="@Url.Action("UploadImage", "Home")"><i class="fa fa-upload" aria-hidden="true"></i>&nbsp;&nbsp;Upload New Image</a>
+</small>
+                </h1>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <p><br />
+             
+Evening Glory is situated in a wonderful riverside position on the banks of the River Yare close to the popular village of Brundall. Brundall is located in the heart of the broads just South East of Norwich city centre and is an ideal base from which to enjoy your Norfolk Broads holiday.
+<br /><br />
+This charming riverside chalet is perfect for a small family. The property sleeps 4 people in one double and one twin bedroom. There is a large decking area overlooking the river, ideal for sitting out, fishing and enjoying the views.
+<br /><br />
+The Norfolk Broads is a very popular holiday destination with many holidaymakers returning year after year. With so many leisure activities available in the area such as fishing, boating, watersports and bird-watching, it's not hard to see why! 
+
+
+     <br/><br/>    
+
+
+                        </p>
+                    </div>
+                </div>
+
+
+                        <div class="row">
+                            <div class="col-sm-6 col-xs-12">
+<p>
+         
+     <b>Bedrooms & Bathrooms</b><br/>
+     <br />
+                   Double bedroom.
+  <br />
+Double bedroom.
+  <br /> 
+  Twin bedroom. Family bathroom - shower cubicle, W.C & hand basin.
+                   <br/><br/>
+
+<b>Pets</b>     <br/><br/>
+
+Pets are accepted at this property at a cost of £30 each per week or £20 each per short break (max 2).
+
+     <br/><br/>
+
+<b>Terms & Conditions</b>     <br/><br/>
+
+
+
+
+£100 deposit is required on booking, balance is due 8 weeks beforehand.
+ <br/> 
+Check in - 4.00pm & check out is 10.00am.
+ <br/> 
+Sorry, no smoking.
+ <br/> 
+Bedding, bed linen & towels provided.
+ <br/> 
+Electricity included.
+ <br/> <br/>
+Weekly breaks: Fri - Fri or Mon - Mon <br/>
+Weekend breaks 3 nights: Fri - Mon <br/>
+Midweek breaks 4 nights: Mon - Fri <br/>
+<br/><br/>
+<b>Location Information</b>  
+ <br/><br/>
+
+
+
+Evening Glory is in a fantastic location on the Norfolk Broads, within easy reach of the local villages, pubs, restaurants and attractions.
+ <br/> <br/>
+The Norfolk Coast and sandy beaches are a short drive away from the property.
+ <br/> <br/>
+There are numerous family-friendly attractions in the local area, including Wroxham Barns, BeWilderwood, Bure Valley Railway and Broads Tours river trips.
+
+
+              
+
+
+
+                    </p>
+                </div>
+                <div class="col-sm-6 hidden-xs">
+
+
+                    <iframe src="https://calendar.google.com/calendar/b/2/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=b0dttgpcvvgvtavcpdinf22p1o%40group.calendar.google.com&amp;color=%23182C57&amp;ctz=Europe%2FLondon" style="border-width:0" width="100%" height="400" frameborder="0" scrolling="no"></iframe>       </div>
+
+
+
+
+            </div>
+            <br /><br />
+            <div class="row">
+                <div class="col-sm-6">
+
+
+                    @* <a class="btn btn-primary btn-lg" href="~/Upload_Files/Evening_Glory/Pricing/Evening Glory rates 2018.xlsx">Download the Price Guide&nbsp;&nbsp;<i class="fa fa-download" aria-hidden="true"></i></a> *@
+
+                    <br class="hidden-md hidden-lg " /><br class=" hidden-md hidden-lg " />
+                    <button type="button" style="float:right;" class="btn btn-success btn-lg btn-left-mobile" data-toggle="modal" data-target="#Contactform">
+                        Get in Touch&nbsp;&nbsp;<i class="fa fa-heart" aria-hidden="true"></i>
+                    </button>
+                </div>
+
+            </div><br /><hr />
+           
+            <div class="row">
+                <div class="col-sm-12 ">
+
+
+
+                    @if (Model.ImageList.Count > 0)
+            {
+                <div class="row-fluid">
+                    <div class="span2">
+                        <div class="item">
+                            @foreach (var image in Model.ImageList)
+                    {
+                        <div class="imgref">
+                            <a rel="group" class="fancybox-button" data-rel="fancybox-button"
+                               href="@Url.Content("~/Upload_Files/Evening_Glory/"+ image)">
+                                <div class="zoom">
+                                    <img src="@Url.Content("~/Upload_Files/Evening_Glory/" + image)" class="imgBox  thumbnail" />
+
+                                </div>
+                            </a>
+                        </div>
+            }
+                        </div>
+                    </div>
+                </div>
+    }
+
+
+
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+        </div>
+
+
+
+            </div>
+
+        </div>
+@section Scripts {
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".fancybox-button").fancybox({
+                fitToView: true,
+                closeClick: false,
+                autoSize: false,
+                openEffect: 'elastic',
+                closeEffect: 'elastic',
+               
+            });
+        });
+
+        $(document).ready(function () {
+            $('.imageGallery').fancybox({
+                fitToView: true,
+                width: '600px',
+                height: '400px',
+                autoSize: false,
+                closeClick: true,
+                openEffect: 'elastic',
+                closeEffect: 'elastic',
+                padding: 0,
+                closeBtn: false,
+                'afterClose': function () {
+                    window.location.reload();
+                },
+            });
+        });
+    </script>
+}
